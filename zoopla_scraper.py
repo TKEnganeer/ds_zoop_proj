@@ -27,10 +27,10 @@ class ZooplaScraper:
         
         cards = content.findAll('div', {'class':'listing-results-wrapper'})
         
-        try:
-            phone = card.find('span', {'class':'agent_phone'}).text.strip()
-        except:
-            phone = 'N/A'
+        # try:
+        #     phone = card.find('span', {'class':'agent_phone'}).text.strip()
+        # except:
+        #     phone = 'N/A'
         
         for card in cards:
             self.results.append ({
@@ -38,7 +38,7 @@ class ZooplaScraper:
                 'address':card.find('a', {'class':'listing-results-address'}).text,
                 'description': card.find('p').text.strip(),
                 'price': card.find('a', {'class':'listing-results-price text-price'}).text.strip().strip('\u00a3'),
-                'phone': phone,
+                'phone': card.find('span', {'class':'agent_phone'}).text.strip(),
                 'closest_station': card.find('li', {'class':'clearfix'}).text.strip().strip('\n'),
                 'listed_on': card.find('p', {'class':'top-half listing-results-marketed'}).text.strip().split('by')[0].split(),
                 'image': card.find('a', {'class': 'photo-hover'}).find('img')['data-src']
