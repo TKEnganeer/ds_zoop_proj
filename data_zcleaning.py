@@ -41,4 +41,5 @@ df['listed_on_2'] = df['listed_on'].apply(lambda x: x.split("'on',")[-1].strip("
 # df['listed_on_2'] = df['listed_on_2'].apply(lambda x: ''.join(x))
 # remove unnamed column
 
-df.to_csv('zoopla_data_cleaned.csv')
+df.to_csv('zoopla_data_cleaned.csv', index= False)
+
