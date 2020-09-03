@@ -11,7 +11,6 @@ import numpy as np
 
 df = pd.read_csv("C:/Users/TimK/Documents/ds_zoop_proj/zeda_data.csv")
 df = df.dropna()
-df['prop_price_k'] = df['price'].div(1000)
 
 # choose relevant columns
 # 'closest_station'
