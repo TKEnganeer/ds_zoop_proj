@@ -1,14 +1,14 @@
 # Data Science Outer London House Price Estimator: Project Overview
-* Created a tool to estimate the house prices for propeties < 40 miles from central London less than £325k (MAE ~ £19K) to help people when looking for homes at commutable distance. 
-* Scraped over 900 property descriptions from zoopla.co.uk using python and beautifulsoups.
-* Engineered features from the text of each decsription to quantify the value house prices have on garden, largeness, spaciousness and whether or notthe propety has been extended.
+* Created a tool to estimate the house prices for properties < 40 miles from central London less than £325k (MAE ~ £19K) to help people when looking for homes at commutable distance. 
+* I scraped over 900 property descriptions from zoopla.co.uk using python and beautifulsoups.
+* Engineered features from the text for each decsription to quantify how the value of house prices change if are description were to have a garden, largeness, spaciousness or an extention featured in the description.
 * Optimised Linear, Lasso, and Random Forest Regressors using GridsearchCV to reach the best model.
 * Built a client facing API using flask
 
 ## Code and Resources Used
 **Python Version:** 3.8
 
-**Packages:** pandas, numpy, sklearn, maatplotlib, seasborn, beautifulsoups, flask, json, pickle.
+**Packages:** pandas, numpy, sklearn, matplotlib, seasborn, beautifulsoups, flask, json, pickle.
 
 **For Web Framework Requirements:** pip install -r requirements.txt
 
@@ -16,10 +16,12 @@
 
 **Scraper Tutorial:** https://www.youtube.com/watch?v=Itqfkgw508U
 
+**Postal code geocoding and distance calculation Github:** https://github.com/rth/pgeocode
+
 **Flask Productionization:** https://towardsdatascience.com/productionize-a-machine-learning-model-with-flask-and-heroku-8201260503d2
 
 ## Web Scraping
-I adapated the web scraper from the youtube video (above) to suit my a search creteria - A 3 bedroom house with a maximum 40miles from central London under £325k. I used this information to scrape about 900 property information postings on zoopla.co.uk. I got the following information from each property:
+I adapated the web scraper from the youtube video (above) to suit my search creteria - *"A 3 bedroom house at a maximum 40 miles radius from central London under £325k."*. I used this information to scrape about 900 property information postings on zoopla.co.uk. I got the following information from each property:
 * title 
 * address 
 * description 
@@ -27,13 +29,13 @@ I adapated the web scraper from the youtube video (above) to suit my a search cr
 * estate agent phone number
 * closest_station (to property)
 * listed_on (date listed) 
-* image (of property)
+* image link (of property)
 * closest_st_miles (distance to closest train station)
 * prop_pc (postcode) 
 
 ## Data Cleaning
 
-After scraping the data, I cleaned so it could be more usable in my model. I made the following changes and created the following variables: 
+After scraping the data, I cleaned so it could be more usable in my model. I made further changes and created the following variables: 
 * Parsed numeric data from property price and simplified it
 * Property distance from central London (W2 2SZ) 
 * Numerical value for date listed 
