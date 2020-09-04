@@ -51,11 +51,30 @@ After scraping the data, I cleaned so it could be more usable in my model. I mad
 
 I looked at the distributions of the data and the value counts for the various categorical variables. Below some highlights from my pivot tables.
 
-![alt text]
+![alt text](https://github.com/TKEnganeer/ds_zoop_proj/blob/master/hp_correlation_visual.PNG "Correlations")
+![alt text](https://github.com/TKEnganeer/ds_zoop_proj/blob/master/price_by_location.PNG "Price by Location")
+![alt text](https://github.com/TKEnganeer/ds_zoop_proj/blob/master/property_feature_distribution.PNG "Number of properties with features")
+![alt text](https://github.com/TKEnganeer/ds_zoop_proj/blob/master/property_location_distribution.PNG "Number of properties by location")
+![alt text](https://github.com/TKEnganeer/ds_zoop_proj/blob/master/property_type_distribution.PNG "Number of properties types")
 
-## Model Building
 
-## Model Performance
+## Model Building 
 
-## Productionization
+I started by transforming the categorical variables into dummy variables. The data was split into train and test sets at a ratio at 80:20 respectively.   
+
+I used three different models and evaluated them using Mean Absolute Error (MAE). Using MAE allowed me to interpret the results with relative ease as they are known to work well for these types of models.   
+
+I tried the following three models:
+*	**Multiple Linear Regression** – The baseline model
+*	**Lasso Regression** – As the data is sparse and has many categorical variables,  a normalized regression like lasso might be effective.
+*	**Random Forest** – Like lasso regression, with the sparsity associated with the data, I it has been shown that this a good model. 
+
+## Model performance
+The Random Forest model was only slightly better than Lasso other when it came to the test and validation sets. My Linear regression error was way to high compared to the other models which leads me to belive that there is either an error in my code or the data used to calculate the model.
+*	**Random Forest** : MAE = -19.52
+*	**Multi-Linear Regression**: MAE = -186336976912.14767
+*	**Lasso Regression**: MAE = -19.55
+
+## Productionization 
+In this section, I built a flask API endpoint, hosted on a local webserver by folling the steps in the Flask Productionization tutorial referenced above. The API endpoint takes in a request with a list of values from the house criteria and returns the estimated price. 
 
