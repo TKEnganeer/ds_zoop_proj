@@ -21,7 +21,7 @@
 **Flask Productionization:** https://towardsdatascience.com/productionize-a-machine-learning-model-with-flask-and-heroku-8201260503d2
 
 ## Web Scraping
-I adapated the web scraper from the youtube video (above) to suit my search creteria - *"A 3 bedroom house at a maximum 40 miles radius from central London under £325k."*. I used this information to scrape about 900 property information postings on zoopla.co.uk. I got the following information from each property:
+I adapted the web scraper from the youtube video (above) to suit my search creteria - *"A 3 bedroom house at a maximum 40 miles radius from central London under £325k."*. I used this information to scrape about 900 property information postings on zoopla.co.uk. I got the following information from each property:
 * title 
 * address 
 * description 
