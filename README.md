@@ -1,7 +1,7 @@
 # Data Science Outer London House Price Estimator: Project Overview
-* Created a tool to estimate the house prices for properties < 40 miles from central London less than £325k (MAE ~ £19K) to help people when looking for homes at commutable distance. 
+* I created a tool to estimate the house prices for properties < 40 miles from central London less than £325k (MAE ~ £19K) to help people when looking for homes at commutable distance.
 * I scraped over 900 property descriptions from zoopla.co.uk using python and beautifulsoups.
-* Engineered features from the text for each decsription to quantify how the value of house prices change if are description were to have a garden, largeness, spaciousness or an extention featured in the description.
+* Engineered features from the text for each description to quantify how the value of house prices change if are description were to have a garden, largeness, spaciousness or an extension featured in the description.
 * Optimised Linear, Lasso, and Random Forest Regressors using GridsearchCV to reach the best model.
 * Built a client facing API using flask
 
