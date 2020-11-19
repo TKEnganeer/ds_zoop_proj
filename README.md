@@ -72,7 +72,7 @@ I tried the following three models:
 *	**Random Forest** – Like lasso regression, with the sparsity associated with the data, I it has been shown that this a good model. 
 
 ## Model performance
-The Random Forest model was only slightly better than Lasso other when it came to the test and validation sets. My Linear regression error was way to high compared to the other models which leads me to belive that there is either an error in my code or the data used to calculate the model.
+The Random Forest model was only slightly better than Lasso when it came to the test and validation sets. My Linear regression error was very high compared to the other models which leads me to believe that there is either an error in my code or the data used to calculate the model.
 *	**Random Forest** : MAE = -19.52
 *	**Multi-Linear Regression**: MAE = -186336976912.14767
 *	**Lasso Regression**: MAE = -19.55
